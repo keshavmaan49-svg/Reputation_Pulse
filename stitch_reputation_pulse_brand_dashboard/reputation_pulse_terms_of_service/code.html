@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terms of Service - Reputation Pulse</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#ffb95f",
+                        "outline-variant": "#3c4a42",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#242a3a",
+                        "on-surface": "#dde2f8",
+                        "secondary": "#4cd7f6",
+                        "secondary-fixed": "#acedff",
+                        "on-surface-variant": "#bbcabf",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-primary": "#003824",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-container": "#191f2f",
+                        "primary-fixed-dim": "#4edea3",
+                        "surface-dim": "#0d1322",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "inverse-on-surface": "#2a3040",
+                        "tertiary-fixed": "#ffddb8",
+                        "outline": "#86948a",
+                        "surface": "#0d1322",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#00422b",
+                        "secondary-container": "#03b5d3",
+                        "primary-container": "#10b981",
+                        "surface-container-lowest": "#080e1d",
+                        "on-secondary-fixed": "#001f26",
+                        "on-secondary": "#003640",
+                        "on-background": "#dde2f8",
+                        "tertiary-container": "#e29100",
+                        "primary-fixed": "#6ffbbe",
+                        "surface-bright": "#33394a",
+                        "inverse-surface": "#dde2f8",
+                        "surface-variant": "#2f3445",
+                        "primary": "#4edea3",
+                        "inverse-primary": "#006c49",
+                        "surface-tint": "#4edea3",
+                        "on-tertiary-container": "#523200",
+                        "on-primary-fixed-variant": "#005236",
+                        "surface-container-low": "#151b2b",
+                        "background": "#0d1322",
+                        "surface-container-highest": "#2f3445",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-secondary-container": "#00424e",
+                        "on-primary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary": "#472a00",
+                        "on-tertiary-fixed": "#2a1700"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "section-gap": "120px"
+                    },
+                    fontFamily: {
+                        "display-xl": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
+        }
+        .ambient-glow {
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(3, 181, 211, 0.05), transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen ambient-glow flex flex-col">
+<!-- TopNavBar (Shared Component) - Suppressed per rules for legal pages, but rendered here as requested in prompt. Applying 'suppressed' logic conceptually by keeping it minimal. -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-outline-variant/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-headline-sm font-bold text-on-surface tracking-tight">
+                Lumina Intelligence
+            </div>
+<nav class="hidden md:flex items-center gap-6">
+<!-- None active as this is a legal page -->
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-label-md hover:bg-white/5 transition-all duration-300 rounded px-2 py-1" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-label-md hover:bg-white/5 transition-all duration-300 rounded px-2 py-1" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-label-md hover:bg-white/5 transition-all duration-300 rounded px-2 py-1" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-label-md hover:bg-white/5 transition-all duration-300 rounded px-2 py-1" href="#">Contact</a>
+</nav>
+<button class="hidden md:block bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md font-semibold hover:brightness-110 active:scale-95 duration-200 border-b-2 border-primary-fixed-dim">
+                Get Started
+            </button>
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full flex flex-col md:flex-row gap-12">
+<!-- Sidebar Navigation -->
+<aside class="md:w-1/4 hidden md:block">
+<div class="sticky top-32 glass-panel rounded-xl p-6">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Contents</h3>
+<nav class="flex flex-col gap-4">
+<a class="text-primary font-label-md text-label-md transition-colors flex items-center gap-2" href="#acceptance">
+<span class="w-1 h-4 bg-primary rounded-full"></span> Acceptance of Terms
+                    </a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors pl-3" href="#obligations">User Obligations</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors pl-3" href="#limitations">Service Limitations</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors pl-3" href="#ip">Intellectual Property</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors pl-3" href="#termination">Termination</a>
+</nav>
+</div>
+</aside>
+<!-- Legal Content Document -->
+<article class="md:w-3/4 glass-panel rounded-xl p-8 md:p-12">
+<header class="mb-12">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">Terms of Service</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Last updated: October 24, 2024</p>
+</header>
+<div class="space-y-12">
+<section id="acceptance">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">1. Acceptance of Terms</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                        By accessing or using the Lumina Intelligence platform, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access the service. These terms constitute a legally binding agreement between you and Lumina AI Brand Intelligence.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        We reserve the right to modify these terms at any time. We will provide notice of significant changes by updating the date at the top of this document and, in some cases, providing additional notice through the platform interface.
+                    </p>
+</section>
+<div class="glow-divider w-full"></div>
+<section id="obligations">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">2. User Obligations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                        Users must provide accurate, complete, and current information when registering for an account. You are responsible for safeguarding the password that you use to access the service and for any activities or actions under your password.
+                    </p>
+<ul class="list-disc list-inside space-y-2 font-body-md text-body-md text-on-surface-variant ml-4">
+<li>Maintain the security of your account credentials.</li>
+<li>Do not use the service for any illegal or unauthorized purpose.</li>
+<li>Do not attempt to disrupt or compromise the integrity of our systems.</li>
+<li>Ensure all data ingested into the platform complies with applicable privacy laws.</li>
+</ul>
+</section>
+<div class="glow-divider w-full"></div>
+<section id="limitations">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">3. Service Limitations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Lumina Intelligence is provided "as is" and "as available" without any warranties of any kind, either express or implied. While we strive for maximum uptime and analytical accuracy, we do not guarantee that the service will be uninterrupted, secure, or error-free. The insights generated by the platform are algorithmic interpretations and should not be the sole basis for critical business decisions.
+                    </p>
+</section>
+<div class="glow-divider w-full"></div>
+<section id="ip">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">4. Intellectual Property</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        The service and its original content, features, and functionality are and will remain the exclusive property of Lumina AI Brand Intelligence and its licensors. The service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Lumina AI.
+                    </p>
+</section>
+<div class="glow-divider w-full"></div>
+<section id="termination">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">5. Termination</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                        We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        If you wish to terminate your account, you may simply discontinue using the Service or contact support to request data deletion in accordance with our Privacy Policy.
+                    </p>
+</section>
+</div>
+</article>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/10 mt-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="font-display-lg text-headline-sm font-bold text-primary mb-4">
+                    Lumina Intelligence
+                </div>
+<p class="text-on-surface-variant font-body-md text-caption mt-4">
+                    © 2024 Lumina AI Brand Intelligence. All rights reserved.
+                </p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-4">Product</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">Features</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">Security</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">About</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">Careers</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-4">Social</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-all ease-in-out duration-200 block" href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll spy for sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('aside nav a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            const icon = link.querySelector('.bg-primary');
+                            if(link.getAttribute('href') === `#${entry.target.id}`) {
+                                link.classList.add('text-primary');
+                                link.classList.remove('text-on-surface-variant');
+                                if(!icon) {
+                                    link.innerHTML = `<span class="w-1 h-4 bg-primary rounded-full"></span> ${link.textContent}`;
+                                    link.classList.remove('pl-3');
+                                }
+                            } else {
+                                link.classList.remove('text-primary');
+                                link.classList.add('text-on-surface-variant');
+                                if(icon) {
+                                    link.innerHTML = link.textContent.trim();
+                                    link.classList.add('pl-3');
+                                }
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -80% 0px' });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body></html>

@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+}
+
+@theme inline {
+  --color-primary-fixed-dim: #22d3ee;
+  --color-on-secondary-container: #083344;
+  --color-surface-bright: #ffffff;
+  --color-on-error-container: #450a0a;
+  --color-tertiary-container: #fef08a;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container: #f8fafc;
+  --color-outline-variant: #e2e8f0;
+  --color-surface: #ffffff;
+  --color-tertiary: #eab308;
+  --color-inverse-surface: #0f172a;
+  --color-tertiary-fixed-dim: #ca8a04;
+  --color-on-primary-fixed: #083344;
+  --color-on-secondary: #ffffff;
+  --color-surface-variant: #f1f5f9;
+  --color-on-primary-fixed-variant: #083344;
+  --color-on-background: #0f172a;
+  --color-on-tertiary-fixed: #422006;
+  --color-surface-container-lowest: #ffffff;
+  --color-background: #ffffff;
+  --color-primary-container: #0891b2;
+  --color-error: #ef4444;
+  --color-on-tertiary-container: #422006;
+  --color-on-error: #ffffff;
+  --color-surface-dim: #f1f5f9;
+  --color-on-tertiary: #ffffff;
+  --color-primary-fixed: #67e8f9;
+  --color-on-secondary-fixed: #083344;
+  --color-surface-container-highest: #cbd5e1;
+  --color-secondary-container: #ecfeff;
+  --color-surface-tint: #06b6d4;
+  --color-secondary-fixed-dim: #22d3ee;
+  --color-on-secondary-fixed-variant: #083344;
+  --color-secondary-fixed: #67e8f9;
+  --color-secondary: #06b6d4;
+  --color-surface-container-low: #f8fafc;
+  --color-on-surface: #0f172a;
+  --color-inverse-on-surface: #ffffff;
+  --color-on-tertiary-fixed-variant: #422006;
+  --color-outline: #94a3b8;
+  --color-tertiary-fixed: #fef08a;
+  --color-on-surface-variant: #475569;
+  --color-on-primary-container: #ffffff;
+  --color-primary: #06b6d4;
+  --color-inverse-primary: #0891b2;
+  --color-on-primary: #ffffff;
+  --color-error-container: #fee2e2;
+
+  /* Overrides for hardcoded slate colors to map them to the light theme */
+  --color-slate-950: #ffffff;
+  --color-slate-900: #f8fafc;
+  --color-slate-850: #f1f5f9;
+  --color-slate-800: #e2e8f0;
+  --color-slate-700: #64748b;
+  --color-slate-650: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #334155;
+  --color-slate-300: #1e293b;
+  --color-slate-200: #0f172a;
+  --color-slate-100: #0f172a;
+
+  --spacing-base: 4px;
+  --spacing-margin-mobile: 16px;
+  --spacing-section-gap: 120px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+
+  --font-headline-md: "Geist", sans-serif;
+  --font-caption: "Inter", sans-serif;
+  --font-display-lg: "Geist", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-display-xl: "Geist", sans-serif;
+  --font-headline-sm: "Geist", sans-serif;
+  --font-label-md: "Geist", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body-md);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Glassmorphism Utilities from Prototype */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.glass-active {
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  box-shadow: inset 0 0 20px rgba(6, 182, 212, 0.05);
+}
+
+.glass-panel-active:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(6, 182, 212, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #0891b2, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.radial-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.04);
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), inset 0 0 0 1px rgba(0,0,0,0.01);
+}
+
+.glow-active {
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid #06b6d4;
+  box-shadow: inset 0 0 10px rgba(6, 182, 212, 0.1);
+}
+
+.radial-gradient-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.radial-gradient-bg-cyan {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.input-inset {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.input-inset:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.15), inset 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  box-shadow: 0 2px 0 #0e7490, 0 4px 10px rgba(6, 182, 212, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 #0e7490, 0 2px 5px rgba(6, 182, 212, 0.15);
+}
+
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), transparent);
+}
+
+.ambient-glow {
+  background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.04), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.04), transparent 40%);
+}
+
