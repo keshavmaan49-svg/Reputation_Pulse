@@ -2,6 +2,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useRef, useTransition } from 'react'
 
 interface LoginProps {
   action: (formData: FormData) => void
@@ -10,6 +11,23 @@ interface LoginProps {
 }
 
 export default function Login({ action, error, message }: LoginProps) {
+  const formRef = useRef<HTMLFormElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null)
+  const passwordRef = useRef<HTMLInputElement>(null)
+  const [isPending, startTransition] = useTransition()
+
+  const handleDemoLogin = (e: React.MouseEvent) => {
+    e.preventDefault()
+    if (emailRef.current && passwordRef.current && formRef.current) {
+      emailRef.current.value = 'demo@reputationpulse.com'
+      passwordRef.current.value = 'demopassword123'
+      
+      startTransition(async () => {
+        formRef.current?.requestSubmit()
+      })
+    }
+  }
+
   return (
     <div className="relative z-10 w-full max-w-md px-margin-mobile md:px-0 animate-fade-in">
       <div className="text-center mb-10 flex flex-col items-center">
@@ -35,12 +53,13 @@ export default function Login({ action, error, message }: LoginProps) {
           </div>
         )}
 
-        <form action={action} className="relative z-10 space-y-6">
+        <form ref={formRef} action={action} className="relative z-10 space-y-6">
           <div>
             <label className="block font-label-md text-label-md text-on-surface-variant mb-2" htmlFor="email">Email Address</label>
             <div className="relative">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">mail</span>
               <input 
+                ref={emailRef}
                 autoComplete="email" 
                 className="input-inset w-full rounded-lg py-3 pl-12 pr-4 text-on-surface font-body-md placeholder-outline-variant transition-colors" 
                 id="email" 
@@ -59,6 +78,7 @@ export default function Login({ action, error, message }: LoginProps) {
             <div className="relative">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">lock</span>
               <input 
+                ref={passwordRef}
                 autoComplete="current-password" 
                 className="input-inset w-full rounded-lg py-3 pl-12 pr-4 text-on-surface font-body-md placeholder-outline-variant transition-colors" 
                 id="password" 
@@ -80,9 +100,35 @@ export default function Login({ action, error, message }: LoginProps) {
               Remember me
             </label>
           </div>
-          <div>
-            <button className="btn-primary w-full flex justify-center py-3 px-4 rounded-lg font-label-md text-label-md text-on-primary-fixed cursor-pointer font-bold" type="submit">
-              Sign In
+          <div className="space-y-4">
+            <button 
+              disabled={isPending}
+              className="btn-primary w-full flex justify-center py-3 px-4 rounded-lg font-label-md text-label-md text-on-primary-fixed cursor-pointer font-bold disabled:opacity-50 disabled:cursor-not-allowed" 
+              type="submit"
+            >
+              {isPending ? 'Signing In...' : 'Sign In'}
+            </button>
+
+            <div className="relative flex py-2 items-center">
+              <div className="flex-grow border-t border-outline-variant"></div>
+              <span className="flex-shrink mx-4 text-on-surface-variant font-label-md text-label-md text-xs uppercase tracking-wider">or</span>
+              <div className="flex-grow border-t border-outline-variant"></div>
+            </div>
+
+            <button
+              type="button"
+              disabled={isPending}
+              onClick={handleDemoLogin}
+              className="w-full flex justify-center items-center py-3 px-4 rounded-lg border border-outline-variant hover:border-primary text-on-surface hover:text-primary transition-all duration-300 font-label-md text-label-md font-bold cursor-pointer bg-surface/50 hover:bg-surface disabled:opacity-50 disabled:cursor-not-allowed gap-2"
+            >
+              {isPending ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>
+                  Signing in...
+                </>
+              ) : (
+                'Try with Demo Account'
+              )}
             </button>
           </div>
         </form>
